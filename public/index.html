@@ -216,16 +216,6 @@
             box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
         }
 
-        .merge-btn { background: var(--primary); }
-        .split-btn { background: var(--success); }
-        .compress-btn { background: var(--warning); }
-        .convert-btn { background: var(--danger); }
-
-        .merge-btn:hover { background: #3a56d4; }
-        .split-btn:hover { background: #27ae60; }
-        .compress-btn:hover { background: #e67e22; }
-        .convert-btn:hover { background: #c0392b; }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -487,6 +477,27 @@
             margin-top: 5px;
         }
 
+        .status-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .status-success {
+            background: rgba(46, 204, 113, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+        
+        .status-error {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -557,6 +568,8 @@
                 <div class="file-list" id="fileList">
                     <!-- Files will appear here -->
                 </div>
+                
+                <div id="statusMessage" class="status-message"></div>
                 
                 <div class="progress-container">
                     <div class="progress-bar" id="progressBar">
