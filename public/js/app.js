@@ -23,17 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
             endpoint: "/merge"
         },
         { 
-            id: "split", 
-            icon: "✂️", 
-            title: "Split PDF", 
-            description: "Split a PDF into multiple files",
-            endpoint: null
-        },
-        { 
             id: "compress", 
             icon: "📦", 
             title: "Compress PDF", 
             description: "Reduce PDF file size",
+            endpoint: "/compress"
+        },
+        { 
+            id: "split", 
+            icon: "✂️", 
+            title: "Split PDF", 
+            description: "Split a PDF into multiple files",
             endpoint: null
         },
         { 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const tool = tools.find(t => t.id === toolId);
         if (!tool.endpoint) {
-            showStatus(`⚠️ ${toolTitle} feature is coming soon! Currently only Merge PDFs is available.`, true);
+            showStatus(`⚠️ ${toolTitle} feature is coming soon! Currently Merge & Compress are available.`, true);
         }
     }
 
@@ -142,8 +142,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Handle files
+    // Handle files with validation
     function handleFiles(files) {
+        const tool = tools.find(t => t.id === currentTool);
+        
+        // Tool-specific validation
+        if (tool.id === "compress" && files.length > 1) {
+            showStatus('❌ Compression tool accepts only one PDF file at a time!', true);
+            fileInput.value = "";
+            return;
+        }
+        
+        if (tool.id === "merge" && files.length < 2) {
+            showStatus('❌ Merge tool requires at least 2 PDF files!', true);
+            fileInput.value = "";
+            return;
+        }
+        
         selectedFiles = files;
         fileList.innerHTML = "";
         
@@ -166,7 +181,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         
         processBtn.disabled = false;
-        showStatus(`✅ ${files.length} PDF file(s) selected`, false);
+        
+        if (tool.id === "compress") {
+            showStatus(`✅ 1 PDF file selected for compression`, false);
+        } else if (tool.id === "merge") {
+            showStatus(`✅ ${files.length} PDF files selected for merging`, false);
+        }
     }
 
     // Format file size
@@ -208,7 +228,12 @@ document.addEventListener("DOMContentLoaded", function() {
             if (selectedFiles.length === 0) {
                 showStatus('No files selected', true);
             } else {
-                showStatus(`✅ ${selectedFiles.length} PDF file(s) selected`, false);
+                const tool = tools.find(t => t.id === currentTool);
+                if (tool.id === "compress") {
+                    showStatus(`✅ 1 PDF file selected for compression`, false);
+                } else {
+                    showStatus(`✅ ${selectedFiles.length} PDF file(s) selected`, false);
+                }
             }
         }
     });
@@ -231,9 +256,16 @@ document.addEventListener("DOMContentLoaded", function() {
         try {
             // Create FormData
             const formData = new FormData();
-            selectedFiles.forEach(file => {
-                formData.append('pdfs', file);
-            });
+            
+            if (tool.id === "compress") {
+                // Single file for compression
+                formData.append('pdf', selectedFiles[0]);
+            } else {
+                // Multiple files for merge
+                selectedFiles.forEach(file => {
+                    formData.append('pdfs', file);
+                });
+            }
             
             progressFill.style.width = "60%";
             showStatus("🔄 Processing files...", false);
@@ -256,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 throw new Error(`Server error: ${response.status} - ${errorText}`);
             }
             
-            // Get the merged PDF
+            // Get the processed PDF
             const blob = await response.blob();
             
             // Check if blob is valid
@@ -267,8 +299,14 @@ document.addEventListener("DOMContentLoaded", function() {
             // Create download link
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
+            
+            if (tool.id === "compress") {
+                a.download = `compressed_${Date.now()}.pdf`;
+            } else {
+                a.download = `merged_${Date.now()}.pdf`;
+            }
+            
             a.href = url;
-            a.download = `merged_${Date.now()}.pdf`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -313,5 +351,5 @@ document.addEventListener("DOMContentLoaded", function() {
     loadTools();
     console.log("✅ PDF Processor UI loaded!");
     console.log(`📡 Backend URL: ${BACKEND_URL}`);
-    console.log(`🔗 Merge endpoint: ${BACKEND_URL}/merge`);
+    console.log(`🔗 Available endpoints: /merge, /compress`);
 });

@@ -7,10 +7,11 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const multer_1 = __importDefault(require("multer"));
 const pdf_merger_js_1 = __importDefault(require("pdf-merger-js"));
+const pdf_lib_1 = require("pdf-lib");
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 5000; // Changed from 3000 to 5000
+const PORT = process.env.PORT || 5000;
 // Middleware
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -27,7 +28,6 @@ const storage = multer_1.default.diskStorage({
         cb(null, uploadsDir);
     },
     filename: (req, file, cb) => {
-        // Keep original filename with timestamp
         const timestamp = Date.now();
         const originalName = file.originalname.replace(/\s+/g, "_");
         cb(null, `${timestamp}-${originalName}`);
@@ -36,7 +36,6 @@ const storage = multer_1.default.diskStorage({
 const upload = (0, multer_1.default)({
     storage: storage,
     fileFilter: (req, file, cb) => {
-        // Only accept PDF files
         if (file.mimetype === "application/pdf" || file.originalname.toLowerCase().endsWith(".pdf")) {
             cb(null, true);
         }
@@ -45,7 +44,7 @@ const upload = (0, multer_1.default)({
         }
     },
     limits: {
-        fileSize: 50 * 1024 * 1024 // 50MB limit
+        fileSize: 50 * 1024 * 1024
     }
 });
 // PDF Merge endpoint
@@ -77,7 +76,7 @@ app.post("/api/pdf/merge", upload.array("pdfs"), async (req, res) => {
             if (err) {
                 console.error("❌ Error sending file:", err);
             }
-            // Cleanup: Delete temporary files after sending
+            // Cleanup temporary files
             try {
                 files.forEach(file => {
                     fs_1.default.unlink(file.path, () => { });
@@ -98,6 +97,75 @@ app.post("/api/pdf/merge", upload.array("pdfs"), async (req, res) => {
         });
     }
 });
+// PDF Compress endpoint
+app.post("/api/pdf/compress", upload.single("pdf"), async (req, res) => {
+    try {
+        console.log("📥 Compress request received");
+        const file = req.file;
+        if (!file) {
+            return res.status(400).json({
+                error: "No file uploaded",
+                message: "Please select a PDF file to compress"
+            });
+        }
+        console.log(`📄 Compressing PDF: ${file.originalname}`);
+        // Read the PDF file
+        const pdfBytes = fs_1.default.readFileSync(file.path);
+        // Load the PDF document
+        const pdfDoc = await pdf_lib_1.PDFDocument.load(pdfBytes);
+        // Create a new PDF for compression
+        const compressedPdf = await pdf_lib_1.PDFDocument.create();
+        // Copy all pages
+        const pages = await compressedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+        pages.forEach(page => compressedPdf.addPage(page));
+        // Remove metadata to reduce size
+        compressedPdf.setTitle("Compressed PDF");
+        compressedPdf.setAuthor("");
+        compressedPdf.setSubject("");
+        compressedPdf.setKeywords([]);
+        compressedPdf.setProducer("");
+        compressedPdf.setCreator("");
+        // Save with compression options
+        const compressedPdfBytes = await compressedPdf.save({
+            useObjectStreams: true,
+            addDefaultPage: false,
+            objectsPerTick: 100,
+            updateFieldAppearances: false
+        });
+        // Generate output filename
+        const outputFilename = `compressed-${Date.now()}.pdf`;
+        const outputPath = path_1.default.join(uploadsDir, outputFilename);
+        // Write compressed PDF to file
+        fs_1.default.writeFileSync(outputPath, compressedPdfBytes);
+        const originalSize = fs_1.default.statSync(file.path).size;
+        const compressedSize = fs_1.default.statSync(outputPath).size;
+        const reduction = ((originalSize - compressedSize) / originalSize * 100).toFixed(1);
+        console.log(`✅ PDF compressed successfully: ${outputFilename}`);
+        console.log(`📊 Size: ${(originalSize / 1024).toFixed(1)}KB → ${(compressedSize / 1024).toFixed(1)}KB (${reduction}% reduction)`);
+        // Send the compressed file
+        res.download(outputPath, `compressed-${file.originalname}`, (err) => {
+            if (err) {
+                console.error("❌ Error sending file:", err);
+            }
+            // Cleanup temporary files
+            try {
+                fs_1.default.unlink(file.path, () => { });
+                fs_1.default.unlink(outputPath, () => { });
+                console.log("🧹 Temporary files cleaned up");
+            }
+            catch (cleanupErr) {
+                console.error("Error during cleanup:", cleanupErr);
+            }
+        });
+    }
+    catch (error) {
+        console.error("❌ Compress error:", error);
+        res.status(500).json({
+            error: "Failed to compress PDF",
+            message: error.message || "Unknown error occurred"
+        });
+    }
+});
 // Health check endpoint
 app.get("/api/health", (req, res) => {
     res.json({
@@ -114,6 +182,7 @@ app.get("/api/pdf/health", (req, res) => {
         message: "PDF API is operational",
         endpoints: {
             merge: "POST /api/pdf/merge",
+            compress: "POST /api/pdf/compress",
             health: "GET /api/pdf/health"
         }
     });
@@ -130,6 +199,7 @@ app.listen(PORT, () => {
     console.log(`🔧 API Health:  http://localhost:${PORT}/api/health`);
     console.log(`📄 PDF Health:  http://localhost:${PORT}/api/pdf/health`);
     console.log(`📤 Merge PDF:   POST http://localhost:${PORT}/api/pdf/merge`);
+    console.log(`📦 Compress PDF: POST http://localhost:${PORT}/api/pdf/compress`);
     console.log(`📁 Uploads dir: ${uploadsDir}`);
     console.log(`===========================================\n`);
 });
