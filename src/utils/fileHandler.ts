@@ -1,39 +1,30 @@
 ﻿import multer from "multer";
-import fs from "fs";
 import path from "path";
+import fs from "fs";
 
-// Ensure upload directory exists
-const uploadDir = "uploads";
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+const uploadsDir = path.join(__dirname, "../../uploads");
 
-// Configure multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, uploadDir);
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
+    }
+    cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
-    const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`;
-    cb(null, uniqueName);
+    const timestamp = Date.now();
+    const originalName = file.originalname.replace(/\s+/g, "_");
+    cb(null, `${timestamp}-${originalName}`);
   }
 });
 
-const fileFilter = (req: any, file: any, cb: any) => {
-  const allowedTypes = [".pdf", ".doc", ".docx", ".xlsx", ".jpg", ".png"];
-  const ext = path.extname(file.originalname).toLowerCase();
-  
-  if (allowedTypes.includes(ext)) {
-    cb(null, true);
-  } else {
-    cb(new Error("Invalid file type"), false);
-  }
-};
-
 export const upload = multer({
-  storage,
-  fileFilter,
-  limits: {
-    fileSize: 50 * 1024 * 1024 // 50MB limit
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === "application/pdf") {
+      cb(null, true);
+    } else {
+      cb(new Error("Only PDF files are allowed"));
+    }
   }
 });

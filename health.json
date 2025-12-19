@@ -1,0 +1,1 @@
+{"status":"OK","message":"PDF API is operational","endpoints":{"merge":"POST /api/pdf/merge","split":"POST /api/pdf/split","compress":"POST /api/pdf/compress","info":"POST /api/pdf/info","convertToImages":"POST /api/pdf/convert-to-images","convertToText":"POST /api/pdf/convert-to-text","splitByRanges":"POST /api/pdf/split-by-ranges","health":"GET /api/pdf/health"}}

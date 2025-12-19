@@ -3,132 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Tools | Professional PDF Processing</title>
+    <title>PDF Tools Pro | Ultimate PDF Processing Suite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-bg"></div>
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
+    <!-- Header with Hero Section -->
+    <header class="hero-section">
         <div class="container">
-            <div class="header-content">
+            <nav class="navbar">
                 <div class="logo">
-                    <i class="fas fa-file-pdf logo-icon"></i>
+                    <i class="fas fa-file-pdf"></i>
+                    <span>PDF Tools Pro</span>
                 </div>
-                <h1>PDF Tools Pro</h1>
-                <p class="tagline">Professional PDF processing tools with enterprise-level security and blazing-fast performance</p>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Secure</span>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#tools" class="nav-link">Tools</a>
+                    <a href="#how-it-works" class="nav-link">How it Works</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-outline" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="hero-content">
+                <h1 class="hero-title">Process PDFs Like Never Before</h1>
+                <p class="hero-subtitle">8 powerful tools. 100% local processing. Enterprise-grade security.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h3>100% Secure</h3>
+                            <p>All processing happens locally</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Free Forever</span>
+                    <div class="stat">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h3>Lightning Fast</h3>
+                            <p>Process files in seconds</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4+</span>
-                        <span class="stat-label">Tools</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">⚡</span>
-                        <span class="stat-label">Fast</span>
+                    <div class="stat">
+                        <i class="fas fa-infinity"></i>
+                        <div>
+                            <h3>Free Forever</h3>
+                            <p>No limits, no subscriptions</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="main-content">
-            <h2 class="section-title">Powerful PDF Tools</h2>
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">Complete PDF Processing Suite</h2>
+            <p class="section-subtitle">Everything you need for professional PDF management</p>
             
-            <div class="tools-grid" id="toolsGrid">
-                <!-- Tools loaded dynamically -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Merge PDFs</h3>
+                    <p>Combine multiple PDF files into one unified document</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Split PDF</h3>
+                    <p>Split PDF by pages or extract specific pages</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Compress PDF</h3>
+                    <p>Reduce file size without losing quality</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>PDF Info</h3>
+                    <p>Extract metadata and document information</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <h3>PDF to Images</h3>
+                    <p>Convert PDF pages to high-quality images</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>PDF to Text</h3>
+                    <p>Extract text content from PDF documents</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-columns"></i>
+                    </div>
+                    <h3>Split by Ranges</h3>
+                    <p>Advanced splitting with custom page ranges</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Images to PDF</h3>
+                    <p>Convert multiple images into a single PDF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <h2 class="section-title">Choose Your Tool</h2>
+            <p class="section-subtitle">Select any tool to get started</p>
+            
+            <div class="tools-grid">
+                <!-- Tools will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Select Tool</h3>
+                        <p>Choose from 8 powerful PDF processing tools</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Upload Files</h3>
+                        <p>Upload your PDF files securely (locally processed)</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Process</h3>
+                        <p>Our engine processes your files instantly</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Download</h3>
+                        <p>Download your processed files immediately</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Main Processing Modal -->
+    <div class="modal" id="processingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Process PDF</h2>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea" onclick="triggerFileInput()">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Drop PDF files here</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                </div>
+                
+                <!-- File List -->
+                <div class="file-list" id="fileList"></div>
+                
+                <!-- Tool-specific options -->
+                <div class="tool-options" id="toolOptions"></div>
+                
+                <!-- Status Messages -->
+                <div class="status-area" id="statusArea"></div>
+                
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>Processing</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button class="btn btn-primary" id="processBtn" onclick="processFiles()" disabled>
+                    <i class="fas fa-cogs"></i> Process Files
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal" id="toolModal">
+    <!-- Results Modal -->
+    <div class="modal" id="resultsModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle">Process PDF</h2>
-                <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
-            </div>
-            
-            <div class="upload-area" id="uploadArea">
-                <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                <h3>Drop your PDF files here</h3>
-                <p>or click to browse files</p>
-                <input type="file" id="fileInput" multiple accept=".pdf" style="display: none;">
-                <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
-                    <i class="fas fa-folder-open"></i> Select Files
+                <h2>Processing Complete</h2>
+                <button class="close-btn" onclick="closeResultsModal()">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
             
-            <div class="file-list" id="fileList">
-                <!-- Files will appear here -->
-            </div>
-            
-            <div id="statusMessage" class="status-message"></div>
-            
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar">
-                    <div class="progress-fill" id="progressFill"></div>
+            <div class="modal-body">
+                <div class="result-icon">
+                    <i class="fas fa-check-circle"></i>
                 </div>
-            </div>
-            
-            <div class="modal-actions">
-                <button class="btn btn-primary" id="processBtn" disabled>
-                    <i class="fas fa-cogs"></i> Process Files
-                </button>
-                <button class="btn btn-secondary" onclick="closeModal()">
-                    <i class="fas fa-times"></i> Cancel
-                </button>
+                <h3 id="resultTitle">Files Processed Successfully</h3>
+                <p id="resultMessage"></p>
+                
+                <div class="results-list" id="resultsList"></div>
+                
+                <div class="download-actions">
+                    <button class="btn btn-primary" onclick="downloadAllResults()">
+                        <i class="fas fa-download"></i> Download All
+                    </button>
+                    <button class="btn btn-outline" onclick="processAgain()">
+                        <i class="fas fa-redo"></i> Process More
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-file-pdf"></i> PDF Tools
+                    <i class="fas fa-file-pdf"></i> PDF Tools Pro
                 </div>
                 <p class="footer-text">
-                    Transform your PDF workflow with our powerful, intuitive tools. 
-                    All processing happens locally on your device for maximum privacy and security.
+                    Professional PDF processing tools with 100% local processing.
+                    Your files never leave your device.
                 </p>
                 
-                <div class="footer-badges">
-                    <div class="badge">
-                        <i class="fas fa-shield-alt"></i> 100% Secure Processing
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-bolt"></i> Lightning Fast
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-lock"></i> No Data Storage
-                    </div>
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#tools">Tools</a>
+                    <a href="#how-it-works">How It Works</a>
                 </div>
                 
-                <p class="copyright">© 2025 PDF Tools. All rights reserved.</p>
+                <div class="footer-badges">
+                    <span class="badge">
+                        <i class="fas fa-shield-alt"></i> 100% Secure
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-bolt"></i> Fast Processing
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-lock"></i> No Data Storage
+                    </span>
+                </div>
+                
+                <p class="copyright">© 2025 PDF Tools Pro. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
 </html>
