@@ -1,73 +1,67 @@
 <p align="center">
-  <img src="banner.png" width="70%" style="border-radius: 12px;" />
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/PDF_Tools_Pro-6C63FF?style=for-the-badge&logo=files&logoColor=white"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white"/>
 </p>
 
+<h1 align="center">PDF Tools Pro</h1>
 <p align="center">
-  <b>A lightweight, secure, and fast PDF processing toolkit built with TypeScript and Node.js.</b><br>
-  <i>Local processing, modern UI, and a clean developer-friendly architecture.</i>
+  <b>A complete, local-first PDF processing suite with 8 powerful tools</b><br>
+  <i>Modern TypeScript backend • Clean UI • 100% Local Processing</i>
 </p>
 
 ---
 
-## Overview
+## Features
 
-**PDF Tools Pro** is a local-first PDF utility suite designed for performance, privacy, and simplicity.  
-It includes a polished interface for merging and compressing PDF files without uploading anything to a server.
+### Core PDF Processing
 
-This project features:
+| Feature | Description |
+|--------|-------------|
+| Merge PDFs | Combine multiple PDF files into one unified document |
+| Split PDF | Split PDF by pages or extract specific pages |
+| Compress PDF | Reduce file size without losing quality |
+| PDF Info | Extract metadata and document information |
 
-- Modern UI built with HTML, CSS, JavaScript  
-- TypeScript backend using Node.js and Express  
-- Local-only file processing for complete privacy  
-- Simple API endpoints for integration  
+### Advanced Features
+
+| Feature | Description |
+|--------|-------------|
+| PDF to Images | Convert PDF pages to high-quality PNG or JPEG images |
+| PDF to Text | Extract text content from PDF documents |
+| Split by Ranges | Advanced splitting with custom page ranges (e.g., "1-3,5,7-9") |
+| Images to PDF | Convert multiple images into a single PDF |
+
+### Security & Privacy
+
+- 100% local processing  
+- No data storage  
+- No cloud uploads  
+- No API keys required  
+
+### Performance
+
+- Fast processing with optimized TypeScript and Node.js backend  
+- Responsive UI across devices  
+- Modern design with dark mode support  
+- Real-time progress feedback  
 
 ---
 
-## Installation & Setup
+## Quick Start
 
-Clone the repository:
+### Prerequisites
 
-```bash
-git clone https://github.com/AllenJohnn/PDF-Test.git
-cd PDF-Test
+- Node.js 18 or higher  
+- npm or yarn  
 
-```
-Install dependencies:
+### Installation
 
 ```bash
+git clone https://github.com/AllenJohnn/PDF-Tools.git
+cd PDF-Tools
 npm install
-
-```
-
-Build the TypeScript backend:
-
-```bash
 npm run build
-
-```
-
-Start the development server:
-
-```bash
 npm run dev
-
-```
-
-Open the app in your browser:
-
-```bash
-http://localhost:5000
-
-```
-
-
-
-
-
-
+npm start
