@@ -42,18 +42,6 @@ npm run dev
 
 The application will be available at `http://localhost:5000`
 
-## React Client (Optional)
-
-A modern React frontend is available in the `client` directory:
-
-```bash
-cd client
-npm install
-npm run dev
-```
-
-React app runs at `http://localhost:3001`
-
 ## Project Structure
 
 ```
@@ -69,22 +57,6 @@ pdf-processor/
 ├── dist/                      # Compiled output
 └── uploads/                   # Temporary file storage
 ```
-
-## API Endpoints
-
-Base URL: `http://localhost:5000/api/pdf/`
-
-### Available Endpoints
-
-- `POST /merge` - Merge multiple PDFs
-- `POST /split` - Split PDF by page count
-- `POST /compress` - Compress PDF file
-- `POST /info` - Get PDF information
-- `POST /convert-to-images` - Convert PDF to images
-- `POST /convert-to-text` - Extract text from PDF
-- `POST /split-by-ranges` - Split by custom ranges
-- `POST /images-to-pdf` - Create PDF from images
-- `GET /health` - Health check endpoint
 
 ## Development
 
@@ -112,62 +84,6 @@ npm run clean    # Remove build artifacts
 - TypeScript
 - Tailwind CSS
 - Vite
-
-## Configuration
-
-### Port Configuration
-
-Default port is 5000. To change it, modify `src/server.ts`:
-
-```typescript
-const PORT = process.env.PORT || 5000;
-```
-
-### Installing Poppler (Optional)
-
-Required for PDF to Image conversion.
-
-**Windows:**
-```bash
-choco install poppler
-```
-
-**macOS:**
-```bash
-brew install poppler
-```
-
-**Linux:**
-```bash
-sudo apt-get install poppler-utils
-```
-
-## Troubleshooting
-
-### Port Already in Use
-
-**Windows:**
-```bash
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
-```
-
-**macOS/Linux:**
-```bash
-lsof -i :5000
-kill -9 <PID>
-```
-
-### Module Errors
-
-```bash
-npm install
-npm run build
-```
-
-## License
-
-MIT License
 
 ## Links
 
