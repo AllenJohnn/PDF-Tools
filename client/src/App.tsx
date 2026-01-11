@@ -8,7 +8,7 @@ import ProcessingModal from './components/ProcessingModal';
 import ResultsModal from './components/ResultsModal';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [showProcessingModal, setShowProcessingModal] = useState(false);
   const [showResultsModal, setShowResultsModal] = useState(false);
   const [selectedTool, setSelectedTool] = useState<any>(null);
