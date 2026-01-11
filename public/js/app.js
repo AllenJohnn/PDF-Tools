@@ -3,6 +3,7 @@ const API_BASE_URL = 'http://localhost:5000/api/pdf';
 let currentTool = null;
 let selectedFiles = [];
 let processingResults = [];
+let isProcessing = false;
 
 // Tool Definitions
 const TOOLS = [
@@ -24,7 +25,10 @@ const TOOLS = [
         features: ['Split by page count', 'Extract pages', 'Maintain quality'],
         requiresMultiple: false,
         apiEndpoint: '/split',
-        fieldName: 'file'
+        fieldName: 'file',
+        options: {
+            pagesPerSplit: { type: 'number', label: 'Pages Per Split', placeholder: 'e.g., 1', default: 1, required: true }
+        }
     },
     {
         id: 'compress',
@@ -90,8 +94,9 @@ const TOOLS = [
         description: 'Convert multiple images into a single PDF',
         features: ['Multiple formats', 'Quality control', 'Custom ordering'],
         requiresMultiple: true,
-        apiEndpoint: '/merge', // Using merge endpoint for now
-        fieldName: 'files'
+        apiEndpoint: '/images-to-pdf',
+        fieldName: 'files',
+        acceptTypes: 'image/*'
     }
 ];
 
@@ -203,7 +208,10 @@ function selectTool(toolId) {
 
 // File Handling
 function triggerFileInput() {
-    document.getElementById('fileInput').click();
+    const fileInput = document.getElementById('fileInput');
+    const accept = currentTool && currentTool.acceptTypes ? currentTool.acceptTypes : '.pdf';
+    fileInput.setAttribute('accept', accept);
+    fileInput.click();
 }
 
 function handleFileSelect(event) {
@@ -221,17 +229,55 @@ function handleDrop(event) {
     event.preventDefault();
     event.stopPropagation();
     
-    const files = Array.from(event.dataTransfer.files).filter(file => 
-        file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
-    );
+    // Determine accepted file types based on current tool
+    let acceptedTypes = ['application/pdf'];
+    if (currentTool && currentTool.acceptTypes) {
+        acceptedTypes = [currentTool.acceptTypes];
+    }
+    
+    const files = Array.from(event.dataTransfer.files).filter(file => {
+        if (currentTool && currentTool.acceptTypes === 'image/*') {
+            return file.type.startsWith('image/');
+        }
+        return file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+    });
+    
+    if (files.length === 0) {
+        showErrorMessage('Please drop PDF files or supported image files');
+        return;
+    }
     
     addFiles(files);
 }
 
 function addFiles(files) {
-    const validFiles = files.filter(file => 
-        file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
-    );
+    let validFiles = files;
+    
+    // Validate file types based on current tool
+    if (currentTool && currentTool.acceptTypes === 'image/*') {
+        validFiles = files.filter(file => file.type.startsWith('image/'));
+        if (validFiles.length === 0) {
+            showErrorMessage('Please select image files (PNG, JPG, etc.)');
+            return;
+        }
+    } else {
+        validFiles = files.filter(file => 
+            file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
+        );
+        if (validFiles.length === 0) {
+            showErrorMessage('Please select PDF files');
+            return;
+        }
+    }
+
+    // Validate file size (max 50MB per file)
+    const maxSize = 50 * 1024 * 1024;
+    const oversizedFiles = validFiles.filter(f => f.size > maxSize);
+    
+    if (oversizedFiles.length > 0) {
+        showErrorMessage(`File(s) too large. Maximum size: 50MB`);
+        return;
+    }
 
     selectedFiles.push(...validFiles.map(file => ({
         file: file,
@@ -293,12 +339,35 @@ function updateProcessButton() {
     processBtn.disabled = !hasFiles || !hasRequiredOptions;
 }
 
+function showErrorMessage(message) {
+    const statusArea = document.getElementById('statusArea');
+    if (statusArea) {
+        statusArea.innerHTML = `
+            <div class="status-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                    <strong>Error</strong>
+                    <p>${message}</p>
+                </div>
+            </div>
+        `;
+    }
+}
+
 // Processing
 async function processFiles() {
-    if (!currentTool || selectedFiles.length === 0) return;
+    if (!currentTool || selectedFiles.length === 0) {
+        showErrorMessage('Please select files to process');
+        return;
+    }
+
+    // Prevent double processing
+    if (isProcessing) return;
+    isProcessing = true;
 
     const processBtn = document.getElementById('processBtn');
     const statusArea = document.getElementById('statusArea');
+    const progressContainer = document.querySelector('.progress-container');
     const progressFill = document.getElementById('progressFill');
     const progressPercent = document.getElementById('progressPercent');
 
@@ -306,8 +375,11 @@ async function processFiles() {
     processBtn.disabled = true;
     processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
 
-    // Clear previous status
+    // Clear previous status and show progress
     statusArea.innerHTML = '';
+    if (progressContainer) {
+        progressContainer.classList.add('active');
+    }
     progressFill.style.width = '0%';
     progressPercent.textContent = '0%';
 
@@ -335,9 +407,9 @@ async function processFiles() {
         }
 
         // Show progress
-        progressFill.style.width = '50%';
-        progressPercent.textContent = '50%';
-        statusArea.innerHTML = '<div class="status-info"><i class="fas fa-cog fa-spin"></i> Processing files...</div>';
+        progressFill.style.width = '30%';
+        progressPercent.textContent = '30%';
+        statusArea.innerHTML = '<div class="status-info"><i class="fas fa-cog fa-spin"></i> Processing your files...</div>';
 
         // Make API request
         const response = await fetch(API_BASE_URL + currentTool.apiEndpoint, {
@@ -346,11 +418,12 @@ async function processFiles() {
         });
 
         // Update progress
-        progressFill.style.width = '100%';
-        progressPercent.textContent = '100%';
+        progressFill.style.width = '85%';
+        progressPercent.textContent = '85%';
 
         if (!response.ok) {
-            throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.error || errorData.message || `Server error: ${response.status}`);
         }
 
         // Handle response based on content type
@@ -359,6 +432,10 @@ async function processFiles() {
 
         if (contentType && contentType.includes('application/json')) {
             result = await response.json();
+            // Handle JSON results (for info, multiple files, etc.)
+            if (result.error) {
+                throw new Error(result.error);
+            }
         } else if (contentType && contentType.includes('application/pdf')) {
             const blob = await response.blob();
             result = {
@@ -366,12 +443,19 @@ async function processFiles() {
                 blob: blob,
                 filename: getOutputFilename(currentTool.id)
             };
-        } else if (contentType && (contentType.includes('image/') || contentType.includes('text/'))) {
+        } else if (contentType && contentType.includes('image/')) {
             const blob = await response.blob();
             result = {
-                type: contentType.includes('image/') ? 'image' : 'text',
+                type: 'image',
                 blob: blob,
                 filename: getOutputFilename(currentTool.id, contentType)
+            };
+        } else if (contentType && contentType.includes('text/')) {
+            const blob = await response.blob();
+            result = {
+                type: 'text',
+                blob: blob,
+                filename: getOutputFilename(currentTool.id, 'text/plain')
             };
         } else {
             const text = await response.text();
@@ -379,10 +463,15 @@ async function processFiles() {
         }
 
         // Store result
-        processingResults = [result];
+        processingResults = Array.isArray(result) ? result : [result];
 
-        // Show results
-        showResults();
+        // Complete progress
+        progressFill.style.width = '100%';
+        progressPercent.textContent = '100%';
+        statusArea.innerHTML = '<div class="status-info"><i class="fas fa-check-circle"></i> Processing complete!</div>';
+
+        // Show results after a brief delay
+        setTimeout(showResults, 500);
 
     } catch (error) {
         console.error('Processing error:', error);
@@ -391,13 +480,18 @@ async function processFiles() {
                 <i class="fas fa-exclamation-circle"></i>
                 <div>
                     <strong>Processing failed</strong>
-                    <p>${error.message}</p>
+                    <p>${error.message || 'An unknown error occurred'}</p>
                 </div>
             </div>
         `;
         
+        progressFill.style.width = '0%';
+        progressPercent.textContent = '0%';
+        
         processBtn.disabled = false;
         processBtn.innerHTML = '<i class="fas fa-cogs"></i> Try Again';
+    } finally {
+        isProcessing = false;
     }
 }
 

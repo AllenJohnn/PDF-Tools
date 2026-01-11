@@ -21,10 +21,27 @@ const storage = multer.diskStorage({
 export const upload = multer({
   storage: storage,
   fileFilter: (req, file, cb) => {
-    if (file.mimetype === "application/pdf") {
+    // Accept PDFs and images
+    const allowedMimeTypes = [
+      "application/pdf",
+      "image/jpeg",
+      "image/png",
+      "image/gif",
+      "image/bmp",
+      "image/webp"
+    ];
+
+    // Also check file extensions for more flexibility
+    const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
+    const ext = path.extname(file.originalname).toLowerCase();
+
+    if (allowedMimeTypes.includes(file.mimetype) || allowedExtensions.includes(ext)) {
       cb(null, true);
     } else {
-      cb(new Error("Only PDF files are allowed"));
+      cb(new Error(`File type not allowed: ${file.mimetype}. Supported: PDF, JPG, PNG, GIF, BMP, WEBP`));
     }
+  },
+  limits: {
+    fileSize: 100 * 1024 * 1024 // 100MB max file size
   }
 });

@@ -243,5 +243,50 @@ class PDFController {
             res.status(500).json({ error: `Failed to split PDF: ${error.message}` });
         }
     }
+    static async imagesToPDF(req, res) {
+        try {
+            const files = req.files;
+            if (!files || files.length === 0) {
+                return res.status(400).json({ error: "No image files provided" });
+            }
+            // Validate that all files are images
+            const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp'];
+            for (const file of files) {
+                const ext = file.originalname.toLowerCase().slice(-4);
+                if (!validExtensions.some(e => ext.endsWith(e))) {
+                    // Clean up temp files
+                    files.forEach(f => {
+                        if (fs_1.default.existsSync(f.path))
+                            fs_1.default.unlinkSync(f.path);
+                    });
+                    return res.status(400).json({
+                        error: `Invalid file type: ${file.originalname}. Supported: JPG, PNG, GIF, BMP`
+                    });
+                }
+            }
+            const imagePaths = files.map(f => f.path);
+            const pdfBuffer = await pdfService_1.PDFService.imagesToPDF(imagePaths);
+            // Clean up temp image files
+            imagePaths.forEach(imagePath => {
+                if (fs_1.default.existsSync(imagePath))
+                    fs_1.default.unlinkSync(imagePath);
+            });
+            res.setHeader("Content-Type", "application/pdf");
+            res.setHeader("Content-Disposition", "attachment; filename=images.pdf");
+            res.send(pdfBuffer);
+        }
+        catch (error) {
+            console.error("Images to PDF error:", error);
+            // Clean up temp files if they exist
+            const files = req.files;
+            if (files) {
+                files.forEach(f => {
+                    if (fs_1.default.existsSync(f.path))
+                        fs_1.default.unlinkSync(f.path);
+                });
+            }
+            res.status(500).json({ error: `Failed to create PDF from images: ${error.message}` });
+        }
+    }
 }
 exports.PDFController = PDFController;

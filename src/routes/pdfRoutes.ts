@@ -10,16 +10,20 @@ router.post("/split", upload.single("file"), PDFController.split);
 router.post("/compress", upload.single("file"), PDFController.compress);
 router.post("/info", upload.single("file"), PDFController.getInfo);
 
-// NEW: Conversion Features
+// Conversion Features
 router.post("/convert-to-images", upload.single("file"), PDFController.convertToImages);
 router.post("/convert-to-text", upload.single("file"), PDFController.convertToText);
 router.post("/split-by-ranges", upload.single("file"), PDFController.splitByRanges);
+
+// Images to PDF
+router.post("/images-to-pdf", upload.array("files", 50), PDFController.imagesToPDF);
 
 // Health check
 router.get("/health", (req, res) => {
   res.json({ 
     status: "OK", 
     message: "PDF API is operational",
+    timestamp: new Date().toISOString(),
     endpoints: {
       merge: "POST /api/pdf/merge",
       split: "POST /api/pdf/split",
@@ -28,6 +32,7 @@ router.get("/health", (req, res) => {
       convertToImages: "POST /api/pdf/convert-to-images",
       convertToText: "POST /api/pdf/convert-to-text",
       splitByRanges: "POST /api/pdf/split-by-ranges",
+      imagesToPDF: "POST /api/pdf/images-to-pdf",
       health: "GET /api/pdf/health"
     }
   });
