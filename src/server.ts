@@ -1,79 +1,101 @@
-﻿import express from "express";
+﻿import "express-async-errors";
+import express from "express";
 import cors from "cors";
+import helmet from "helmet";
+import compression from "compression";
+import swaggerUi from "swagger-ui-express";
+import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
-
-// Import your modular routes and controllers
+import { createServer } from "http";
+import { Server as SocketIOServer } from "socket.io";
+import * as Sentry from "@sentry/node";
 import pdfRoutes from "./routes/pdfRoutes";
-import { upload } from "./utils/fileHandler";
+import logger from "./utils/logger";
+import { errorHandler } from "./middleware/errorHandler";
+import { generalLimiter, uploadLimiter } from "./middleware/rateLimiter";
+import { swaggerSpec } from "./config/swagger";
+import { initSentry } from "./utils/sentry";
+import { initRedis } from "./utils/redis";
+
+dotenv.config();
+
+initSentry();
+
 const app = express();
+const httpServer = createServer(app);
+const io = new SocketIOServer(httpServer, {
+  cors: { origin: process.env.CORS_ORIGIN || "http://localhost:5173" },
+});
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
+app.use(Sentry.Handlers.requestHandler());
+app.use(helmet());
+app.use(compression());
+app.use(cors({ origin: process.env.CORS_ORIGIN || "http://localhost:5173" }));
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+app.use(generalLimiter);
 
-// Serve static files from public folder
-app.use(express.static(path.join(__dirname, "../public")));
+// Serve React client build
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// Create uploads directory if it doesn't exist
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+io.on("connection", (socket) => {
+  logger.info(`User connected: ${socket.id}`);
+  socket.on("disconnect", () => {
+    logger.info(`User disconnected: ${socket.id}`);
+  });
+});
+
+app.set("io", io);
+
 const uploadsDir = path.join(__dirname, "..", "uploads");
 if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
 }
 
-// Create converted_images subdirectory
 const convertedImagesDir = path.join(uploadsDir, "converted_images");
 if (!fs.existsSync(convertedImagesDir)) {
     fs.mkdirSync(convertedImagesDir, { recursive: true });
 }
 
-// Serve uploads directory
 app.use("/uploads", express.static(uploadsDir));
 
-// Use modular routes - THIS IS THE KEY CHANGE!
-app.use("/api/pdf", pdfRoutes);
+app.use("/api/pdf", uploadLimiter, pdfRoutes);
 
-// Global health check
 app.get("/api/health", (req: express.Request, res: express.Response) => {
     res.json({ 
         status: "OK", 
         message: "PDF Processor is running",
         timestamp: new Date().toISOString(),
-        version: "1.0.0"
+        version: "1.0.0",
+        environment: process.env.NODE_ENV || "development"
     });
 });
 
-// Serve index.html for the frontend
-app.get("/", (req: express.Request, res: express.Response) => {
-    res.sendFile(path.join(__dirname, "../public", "index.html"));
+// Serve React app for all non-API routes
+app.get("*", (req: express.Request, res: express.Response) => {
+    if (!req.path.startsWith('/api')) {
+        res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+    }
 });
 
-// Global error handler
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-    console.error("❌ Server error:", err);
-    res.status(500).json({ 
-        error: "Internal server error",
-        message: err.message || "Something went wrong"
-    });
-});
+app.use(Sentry.Handlers.errorHandler());
+app.use(errorHandler);
 
-// 404 handler
-app.use("*", (req: express.Request, res: express.Response) => {
-    res.status(404).json({ 
-        error: "Not Found",
-        message: `Route ${req.originalUrl} not found`
-    });
-});
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`\n🚀 ========================================`);
-    console.log(`✅ Server running at http://localhost:${PORT}`);
-    console.log(`📄 Frontend:    http://localhost:${PORT}`);
-    console.log(`🔧 API Health:  http://localhost:${PORT}/api/health`);
-    console.log(`📄 PDF Health:  http://localhost:${PORT}/api/pdf/health`);
-    console.log(`📁 Uploads dir: ${uploadsDir}`);
-    console.log(`📁 Converted images: ${convertedImagesDir}`);
-    console.log(`===========================================\n`);
+httpServer.listen(PORT, async () => {
+  try {
+    await initRedis();
+  } catch (error) {
+    logger.warn("Redis initialization failed - running without cache");
+  }
+  
+  logger.info(`🚀 Server running at http://localhost:${PORT}`);
+  logger.info(`📄 Frontend:    http://localhost:${PORT}`);
+  logger.info(`🔧 API Health:  http://localhost:${PORT}/api/health`);
+  logger.info(`📚 API Docs:    http://localhost:${PORT}/api-docs`);
+  logger.info(`📁 Uploads dir: ${uploadsDir}`);
+  logger.info(`📁 Converted images: ${convertedImagesDir}`);
 });

@@ -1,0 +1,802 @@
+2026-01-13 23:48:05 info: 🚀 Server running at http://localhost:5000
+2026-01-13 23:48:05 info: 📄 Frontend:    http://localhost:5000
+2026-01-13 23:48:05 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-13 23:48:05 info: 📄 PDF Health:  http://localhost:5000/api/pdf/health
+2026-01-13 23:48:05 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-13 23:48:05 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-13 23:56:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:03 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:03 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:04 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:04 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:05 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:05 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:06 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:06 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:07 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:07 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:08 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:09 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:09 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:10 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:10 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:11 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:11 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:12 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:12 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:13 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:13 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:14 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:14 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:15 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:15 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:16 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:16 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:17 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:17 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:18 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:18 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:19 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:19 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:20 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:20 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:21 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:21 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:22 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:22 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:23 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:23 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:24 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:24 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:26 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:26 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:27 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:27 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:28 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:28 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:29 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:30 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:30 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:31 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:31 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:32 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:32 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:33 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:33 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:34 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:34 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:35 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:35 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:36 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:36 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:37 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:37 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:38 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:38 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:39 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:39 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:40 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:40 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:41 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:41 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:42 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:42 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:43 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:43 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:44 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:44 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:45 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:45 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:46 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:46 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:47 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:47 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:49 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:49 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:50 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:50 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:51 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:51 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:52 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:52 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:53 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:53 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:54 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:54 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:55 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:56 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:56 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:57 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:57 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:58 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:58 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:59 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:56:59 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:03 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:03 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:04 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:04 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:05 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:05 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:06 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:06 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:07 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:07 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:08 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:08 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:09 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:09 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:10 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:10 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:11 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:11 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:12 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:12 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:13 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:13 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:14 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:14 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:15 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:25 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:26 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:26 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:26 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:27 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:27 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:28 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:28 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:29 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:29 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:30 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:30 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:31 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:31 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:32 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:32 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:33 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:33 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:34 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:34 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:35 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:35 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:36 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:36 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:37 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:37 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:38 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:38 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:47 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:47 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:48 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:49 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:49 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:49 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:50 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:50 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:51 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:51 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:52 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:52 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:53 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:53 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:54 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:54 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:55 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:55 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:56 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:56 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:57 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:57 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:58 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:59 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:57:59 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:00 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:01 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:02 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:58:03 error: Redis error: connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+2026-01-13 23:59:29 info: Redis disabled - running without cache
+2026-01-13 23:59:29 info: 🚀 Server running at http://localhost:5000
+2026-01-13 23:59:29 info: 📄 Frontend:    http://localhost:5000
+2026-01-13 23:59:29 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-13 23:59:29 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-13 23:59:29 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-13 23:59:29 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 00:02:24 info: Redis disabled - running without cache
+2026-01-14 00:02:24 info: 🚀 Server running at http://localhost:5000
+2026-01-14 00:02:24 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 00:02:24 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 00:02:24 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 00:02:24 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 00:02:24 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 00:02:50 info: User connected: 9TMH-5dD4Vrkg91JAAAC
+2026-01-14 00:02:54 info: User disconnected: 9TMH-5dD4Vrkg91JAAAC
+2026-01-14 19:35:14 info: Redis disabled - running without cache
+2026-01-14 19:35:14 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:35:14 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:35:14 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:35:14 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:35:14 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:35:14 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:36:00 info: Redis disabled - running without cache
+2026-01-14 19:36:00 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:36:00 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:36:00 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:36:00 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:36:00 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:36:00 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:39:45 info: Redis disabled - running without cache
+2026-01-14 19:39:45 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:39:45 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:39:45 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:39:45 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:39:45 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:39:45 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:42:27 info: Redis disabled - running without cache
+2026-01-14 19:42:27 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:42:27 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:42:27 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:42:27 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:42:27 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:42:27 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:43:25 info: Redis disabled - running without cache
+2026-01-14 19:43:25 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:43:25 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:43:25 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:43:25 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:43:25 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:43:25 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:45:09 info: Redis disabled - running without cache
+2026-01-14 19:45:09 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:45:09 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:45:09 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:45:09 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:45:09 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:45:09 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:46:33 info: Redis disabled - running without cache
+2026-01-14 19:46:33 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:46:33 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:46:33 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:46:33 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:46:33 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:46:33 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:48:59 info: Redis disabled - running without cache
+2026-01-14 19:48:59 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:48:59 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:48:59 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:48:59 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:48:59 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:48:59 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:50:14 info: Redis disabled - running without cache
+2026-01-14 19:50:14 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:50:14 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:50:14 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:50:14 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:50:14 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:50:14 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:52:08 info: Redis disabled - running without cache
+2026-01-14 19:52:08 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:52:08 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:52:08 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:52:08 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:52:08 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:52:08 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:55:18 info: Redis disabled - running without cache
+2026-01-14 19:55:18 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:55:18 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:55:18 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:55:18 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:55:18 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:55:18 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:56:02 info: Redis disabled - running without cache
+2026-01-14 19:56:02 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:56:02 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:56:02 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:56:02 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:56:02 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:56:02 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 19:57:20 info: Redis disabled - running without cache
+2026-01-14 19:57:20 info: 🚀 Server running at http://localhost:5000
+2026-01-14 19:57:20 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 19:57:20 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 19:57:20 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 19:57:20 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 19:57:20 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 20:04:11 info: Redis disabled - running without cache
+2026-01-14 20:04:11 info: 🚀 Server running at http://localhost:5000
+2026-01-14 20:04:11 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 20:04:11 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 20:04:11 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 20:04:11 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 20:04:11 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 20:07:42 info: Redis disabled - running without cache
+2026-01-14 20:07:42 info: 🚀 Server running at http://localhost:5000
+2026-01-14 20:07:42 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 20:07:42 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 20:07:42 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 20:07:42 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 20:07:42 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images
+2026-01-14 20:08:42 info: User connected: q6-n-1P8oDh1yIxPAAAB
+2026-01-14 20:08:43 info: User disconnected: q6-n-1P8oDh1yIxPAAAB
+2026-01-14 20:13:00 info: Redis disabled - running without cache
+2026-01-14 20:13:00 info: 🚀 Server running at http://localhost:5000
+2026-01-14 20:13:00 info: 📄 Frontend:    http://localhost:5000
+2026-01-14 20:13:00 info: 🔧 API Health:  http://localhost:5000/api/health
+2026-01-14 20:13:00 info: 📚 API Docs:    http://localhost:5000/api-docs
+2026-01-14 20:13:00 info: 📁 Uploads dir: D:\Personal Project\pdf-processor\uploads
+2026-01-14 20:13:00 info: 📁 Converted images: D:\Personal Project\pdf-processor\uploads\converted_images

@@ -1,48 +1,45 @@
-export default function Hero() {
+﻿interface HeroProps {
+  onPrimaryCta: () => void;
+}
+
+export default function Hero({ onPrimaryCta }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-              Transform PDFs{' '}
-              <span className="text-primary">Instantly</span>
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Powerful PDF tools at your fingertips. Merge, split, compress, and more — all in your browser.
-            </p>
+    <section className="py-28">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-sm font-medium mb-8">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            100% Local Processing
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+            Professional PDF Tools for Modern Workflows
+          </h1>
+          
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
+            Fast, secure, and entirely local. Process your PDFs without uploading to any server. Your privacy is guaranteed.
+          </p>
+          
+          <div className="flex flex-wrap gap-4">
             <button
-              onClick={() => document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all transform hover:scale-105 hover:shadow-xl"
+              onClick={onPrimaryCta}
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-xl hover:opacity-90 transition-all transform hover:scale-105"
             >
-              Get Started Free
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              Get Started
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
-          </div>
-
-          {/* Right Features */}
-          <div className="space-y-4">
-            {[
-              { icon: '🔒', title: '100% Secure', desc: 'All processing happens locally' },
-              { icon: '⚡', title: 'Lightning Fast', desc: 'Process files in seconds' },
-              { icon: '∞', title: 'Unlimited Use', desc: 'No limits, completely free' },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
-              >
-                <div className="flex-shrink-0 w-14 h-14 bg-primary-light dark:bg-primary/20 rounded-xl flex items-center justify-center text-2xl">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white text-lg">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">{feature.desc}</p>
-                </div>
-              </div>
-            ))}
+            
+            <a
+              href="/api-docs"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-black dark:text-white font-semibold rounded-xl border-2 border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-gray-100 transition-all"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              View API Docs
+            </a>
           </div>
         </div>
       </div>

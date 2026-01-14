@@ -4,18 +4,14 @@ const express_1 = require("express");
 const pdfController_1 = require("../controllers/pdfController");
 const fileHandler_1 = require("../utils/fileHandler");
 const router = (0, express_1.Router)();
-// PDF Operations
 router.post("/merge", fileHandler_1.upload.array("files", 10), pdfController_1.PDFController.merge);
 router.post("/split", fileHandler_1.upload.single("file"), pdfController_1.PDFController.split);
 router.post("/compress", fileHandler_1.upload.single("file"), pdfController_1.PDFController.compress);
 router.post("/info", fileHandler_1.upload.single("file"), pdfController_1.PDFController.getInfo);
-// Conversion Features
 router.post("/convert-to-images", fileHandler_1.upload.single("file"), pdfController_1.PDFController.convertToImages);
 router.post("/convert-to-text", fileHandler_1.upload.single("file"), pdfController_1.PDFController.convertToText);
 router.post("/split-by-ranges", fileHandler_1.upload.single("file"), pdfController_1.PDFController.splitByRanges);
-// Images to PDF
 router.post("/images-to-pdf", fileHandler_1.upload.array("files", 50), pdfController_1.PDFController.imagesToPDF);
-// Health check
 router.get("/health", (req, res) => {
     res.json({
         status: "OK",
@@ -35,3 +31,4 @@ router.get("/health", (req, res) => {
     });
 });
 exports.default = router;
+//# sourceMappingURL=pdfRoutes.js.map

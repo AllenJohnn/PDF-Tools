@@ -2,27 +2,23 @@
 import fs from "fs";
 import path from "path";
 
-// Use require() for CommonJS modules
-const Poppler = require('pdf-poppler');
+const Poppler = require("pdf-poppler");
 
 export class PDFService {
-  
-  // Merge multiple PDFs
   static async mergePDFs(filePaths: string[]): Promise<Buffer> {
     const mergedPdf = await PDFDocument.create();
-    
+
     for (const filePath of filePaths) {
       const pdfBytes = fs.readFileSync(filePath);
       const pdf = await PDFDocument.load(pdfBytes);
       const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
       pages.forEach(page => mergedPdf.addPage(page));
     }
-    
+
     const mergedPdfBytes = await mergedPdf.save();
     return Buffer.from(mergedPdfBytes);
   }
 
-  // Split PDF into multiple files
   static async splitPDF(filePath: string, pagesPerSplit: number): Promise<Buffer[]> {
     const pdfBytes = fs.readFileSync(filePath);
     const pdf = await PDFDocument.load(pdfBytes);
@@ -32,20 +28,19 @@ export class PDFService {
     for (let i = 0; i < totalPages; i += pagesPerSplit) {
       const newPdf = await PDFDocument.create();
       const end = Math.min(i + pagesPerSplit, totalPages);
-      
+
       for (let j = i; j < end; j++) {
         const [page] = await newPdf.copyPages(pdf, [j]);
         newPdf.addPage(page);
       }
-      
+
       const newPdfBytes = await newPdf.save();
       result.push(Buffer.from(newPdfBytes));
     }
-    
+
     return result;
   }
 
-  // Compress PDF (simplified - just re-save)
   static async compressPDF(filePath: string): Promise<Buffer> {
     const pdfBytes = fs.readFileSync(filePath);
     const pdf = await PDFDocument.load(pdfBytes);
@@ -53,11 +48,10 @@ export class PDFService {
     return Buffer.from(compressedBytes);
   }
 
-  // Extract PDF info (simplified version without pdf-parse)
   static async getPDFInfo(filePath: string): Promise<any> {
     const pdfBytes = fs.readFileSync(filePath);
     const pdf = await PDFDocument.load(pdfBytes);
-    
+
     return {
       numPages: pdf.getPageCount(),
       info: "PDF information extracted",
@@ -65,14 +59,13 @@ export class PDFService {
     };
   }
 
-  // Convert images to PDF (basic implementation)
   static async imagesToPDF(imagePaths: string[]): Promise<Buffer> {
     const pdfDoc = await PDFDocument.create();
-    
+
     for (const imgPath of imagePaths) {
       const imageBytes = fs.readFileSync(imgPath);
       let image;
-      
+
       if (imgPath.endsWith(".jpg") || imgPath.endsWith(".jpeg")) {
         image = await pdfDoc.embedJpg(imageBytes);
       } else if (imgPath.endsWith(".png")) {
@@ -80,26 +73,20 @@ export class PDFService {
       } else {
         throw new Error("Unsupported image format");
       }
-      
+
       const page = pdfDoc.addPage([image.width, image.height]);
       page.drawImage(image, {
         x: 0,
         y: 0,
         width: image.width,
-        height: image.height,
+        height: image.height
       });
     }
-    
+
     const pdfBytes = await pdfDoc.save();
     return Buffer.from(pdfBytes);
   }
 
-  /**
-   * Convert PDF to images (PNG/JPEG) using pdf-poppler
-   * @param filePath Path to PDF file
-   * @param options Conversion options
-   * @returns Array of image file paths
-   */
   static async convertPDFToImages(
     filePath: string,
     options: {
@@ -116,7 +103,6 @@ export class PDFService {
       pages = "all"
     } = options;
 
-    // Create output directory
     const outputDir = path.join(__dirname, "../../uploads/converted_images");
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
@@ -125,23 +111,19 @@ export class PDFService {
     const baseFileName = path.basename(filePath, ".pdf");
     const timestamp = Date.now();
 
-    // Determine which pages to convert
     let pageNumbers: number[] = [];
     if (pages === "all") {
-      // Get total pages using pdf-lib
       const pdfBytes = fs.readFileSync(filePath);
       const pdf = await PDFDocument.load(pdfBytes);
       const totalPages = pdf.getPageCount();
       pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
     } else {
-      // Use specified pages, filter invalid ones
       const pdfBytes = fs.readFileSync(filePath);
       const pdf = await PDFDocument.load(pdfBytes);
       const totalPages = pdf.getPageCount();
       pageNumbers = pages.filter(page => page >= 1 && page <= totalPages);
     }
 
-    // Configure pdf-poppler options
     const opts = {
       format: format === "jpeg" ? "jpeg" : "png",
       out_dir: outputDir,
@@ -152,106 +134,83 @@ export class PDFService {
     };
 
     try {
-      // Convert PDF to images using require() syntax
       await Poppler.convert(filePath, opts);
-      
-      // Get the generated image files
+
       const results: string[] = [];
       const files = fs.readdirSync(outputDir);
-      
-      // Filter for files that match our pattern
+
       const pattern = new RegExp(`${baseFileName}_${timestamp}_page`);
       for (const file of files) {
         if (pattern.test(file)) {
           results.push(path.join(outputDir, file));
         }
       }
-      
+
       return results.sort();
-      
     } catch (error: any) {
       console.error("PDF to images conversion error:", error);
       throw new Error(`Failed to convert PDF to images: ${error.message}`);
     }
   }
 
-  /**
- * Convert PDF to text using pdf2json
- * @param filePath Path to PDF file
- * @returns Extracted text
- */
-static async convertPDFToText(filePath: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    try {
-      const PDFParser = require("pdf2json");
-      const pdfParser = new PDFParser();
-      
-      let extractedText = "";
-      
-      // Event handlers
-      pdfParser.on("pdfParser_dataError", (error: any) => {
-        console.error("PDF parsing error:", error);
-        reject(new Error(`Failed to parse PDF: ${error.parserError}`));
-      });
-      
-      pdfParser.on("pdfParser_dataReady", (pdfData: any) => {
-        try {
-          if (!pdfData.Pages || pdfData.Pages.length === 0) {
-            extractedText = "No text content found in PDF.";
-            resolve(extractedText);
-            return;
-          }
-          
-          // Extract text from all pages
-          extractedText = pdfData.Pages.map((page: any, pageIndex: number) => {
-            if (!page.Texts || page.Texts.length === 0) {
-              return `Page ${pageIndex + 1}: No text found`;
-            }
-            
-            // Combine all text elements on the page
-            const pageText = page.Texts
-              .map((textObj: any) => {
-                try {
-                  // Text is encoded in URI format
-                  return decodeURIComponent(textObj.R[0].T);
-                } catch (e) {
-                  return textObj.R[0].T || "";
-                }
-              })
-              .join(" ")
-              .replace(/\s+/g, " ") // Normalize whitespace
-              .trim();
-            
-            return `Page ${pageIndex + 1}:\n${pageText}`;
-          }).join("\n\n");
-          
-          // If no text extracted, provide metadata
-          if (!extractedText || extractedText.trim().length === 0) {
-            extractedText = "No extractable text found in PDF. This may be a scanned/image PDF.";
-          }
-          
-          resolve(extractedText);
-          
-        } catch (parseError: any) {
-          reject(new Error(`Failed to extract text: ${parseError.message}`));
-        }
-      });
-      
-      // Load and parse the PDF
-      pdfParser.loadPDF(filePath);
-      
-    } catch (error: any) {
-      reject(new Error(`PDF processing failed: ${error.message}`));
-    }
-  });
-}
+  static async convertPDFToText(filePath: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      try {
+        const PDFParser = require("pdf2json");
+        const pdfParser = new PDFParser();
 
-  /**
-   * Convert PDF to separate pages (enhanced split)
-   * @param filePath Path to PDF file
-   * @param ranges Page ranges like "1-5,7,9-12"
-   * @returns Array of PDF buffers for each range
-   */
+        let extractedText = "";
+
+        pdfParser.on("pdfParser_dataError", (error: any) => {
+          console.error("PDF parsing error:", error);
+          reject(new Error(`Failed to parse PDF: ${error.parserError}`));
+        });
+
+        pdfParser.on("pdfParser_dataReady", (pdfData: any) => {
+          try {
+            if (!pdfData.Pages || pdfData.Pages.length === 0) {
+              extractedText = "No text content found in PDF.";
+              resolve(extractedText);
+              return;
+            }
+
+            extractedText = pdfData.Pages.map((page: any, pageIndex: number) => {
+              if (!page.Texts || page.Texts.length === 0) {
+                return `Page ${pageIndex + 1}: No text found`;
+              }
+
+              const pageText = page.Texts
+                .map((textObj: any) => {
+                  try {
+                    return decodeURIComponent(textObj.R[0].T);
+                  } catch (e) {
+                    return textObj.R[0].T || "";
+                  }
+                })
+                .join(" ")
+                .replace(/\s+/g, " ")
+                .trim();
+
+              return `Page ${pageIndex + 1}:\n${pageText}`;
+            }).join("\n\n");
+
+            if (!extractedText || extractedText.trim().length === 0) {
+              extractedText = "No extractable text found in PDF. This may be a scanned/image PDF.";
+            }
+
+            resolve(extractedText);
+          } catch (parseError: any) {
+            reject(new Error(`Failed to extract text: ${parseError.message}`));
+          }
+        });
+
+        pdfParser.loadPDF(filePath);
+      } catch (error: any) {
+        reject(new Error(`PDF processing failed: ${error.message}`));
+      }
+    });
+  }
+
   static async splitPDFByRanges(
     filePath: string,
     ranges: string
@@ -259,46 +218,43 @@ static async convertPDFToText(filePath: string): Promise<string> {
     const pdfBytes = fs.readFileSync(filePath);
     const pdf = await PDFDocument.load(pdfBytes);
     const totalPages = pdf.getPageCount();
-    
-    // Parse range string like "1-5,7,9-12"
+
     const pageNumbers = this.parseRangeString(ranges, totalPages);
     const result: Buffer[] = [];
 
-    // Group consecutive pages
     const groups = this.groupConsecutivePages(pageNumbers);
-    
+
     for (const group of groups) {
       const newPdf = await PDFDocument.create();
       const copiedPages = await newPdf.copyPages(pdf, group);
       copiedPages.forEach(page => newPdf.addPage(page));
-      
+
       const newPdfBytes = await newPdf.save();
       result.push(Buffer.from(newPdfBytes));
     }
-    
+
     return result;
   }
 
-  /**
-   * Helper: Parse range string like "1-5,7,9-12"
-   */
   private static parseRangeString(rangeStr: string, totalPages: number): number[] {
     const pages: number[] = [];
     const parts = rangeStr.split(",");
-    
+
     for (const part of parts) {
       const trimmed = part.trim();
-      if (!trimmed) continue;
-      
+      if (!trimmed) {
+        continue;
+      }
+
       if (trimmed.includes("-")) {
         const [startStr, endStr] = trimmed.split("-");
         const start = Math.max(1, parseInt(startStr, 10));
         const end = endStr ? Math.min(parseInt(endStr, 10), totalPages) : start;
-        
+
         if (isNaN(start) || isNaN(end) || start > end) {
           continue;
         }
-        
+
         for (let i = start; i <= end; i++) {
           const pageIndex = i - 1;
           if (i <= totalPages && !pages.includes(pageIndex)) {
@@ -315,19 +271,18 @@ static async convertPDFToText(filePath: string): Promise<string> {
         }
       }
     }
-    
+
     return pages.sort((a, b) => a - b);
   }
 
-  /**
-   * Helper: Group consecutive page numbers
-   */
   private static groupConsecutivePages(pages: number[]): number[][] {
-    if (pages.length === 0) return [];
-    
+    if (pages.length === 0) {
+      return [];
+    }
+
     const groups: number[][] = [];
     let currentGroup: number[] = [pages[0]];
-    
+
     for (let i = 1; i < pages.length; i++) {
       if (pages[i] === pages[i - 1] + 1) {
         currentGroup.push(pages[i]);
@@ -336,11 +291,11 @@ static async convertPDFToText(filePath: string): Promise<string> {
         currentGroup = [pages[i]];
       }
     }
-    
+
     if (currentGroup.length > 0) {
       groups.push(currentGroup);
     }
-    
+
     return groups;
   }
 }

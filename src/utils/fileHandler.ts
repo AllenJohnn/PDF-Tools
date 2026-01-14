@@ -21,7 +21,6 @@ const storage = multer.diskStorage({
 export const upload = multer({
   storage: storage,
   fileFilter: (req, file, cb) => {
-    // Accept PDFs and images
     const allowedMimeTypes = [
       "application/pdf",
       "image/jpeg",
@@ -31,7 +30,6 @@ export const upload = multer({
       "image/webp"
     ];
 
-    // Also check file extensions for more flexibility
     const allowedExtensions = ['.pdf', '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
     const ext = path.extname(file.originalname).toLowerCase();
 
@@ -42,6 +40,6 @@ export const upload = multer({
     }
   },
   limits: {
-    fileSize: 100 * 1024 * 1024 // 100MB max file size
+    fileSize: 100 * 1024 * 1024
   }
 });
